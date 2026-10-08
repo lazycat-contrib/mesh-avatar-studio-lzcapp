@@ -45,9 +45,11 @@ jobs:
           NEW_VERSION="$(echo "$VERSION" | awk -F. '{print $1"."$2"."($3+1)}')"
           sed -i "s/^version: .*/version: $NEW_VERSION/" package.yml
           echo "$LATEST" > .upstream-sha
+          # 同步上游 lockfile（供 setup-node 缓存使用）
+          gh api "repos/shinshin86/mesh-avatar-studio/contents/package-lock.json?ref=main" --jq '.content' | base64 -d > package-lock.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.yml .upstream-sha
+          git add package.yml .upstream-sha package-lock.json
           git commit -m "chore: bump to upstream $LATEST ($NEW_VERSION)"
           git push
 
