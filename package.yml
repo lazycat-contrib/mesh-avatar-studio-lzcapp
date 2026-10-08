@@ -1,0 +1,18 @@
+package: cloud.lazycat.app.mesh-avatar
+version: 1.0.0
+name: Mesh Avatar Studio
+description: "3D 二次元头像工作室：网格编辑、口型同步、Live2D 式直播推流"
+min_os_version: "1.5.0"
+homepage: https://github.com/shinshin86/mesh-avatar-studio
+author: shinshin86
+license: MIT
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Mesh Avatar Studio
+    description: "3D 二次元头像工作室：网格编辑、口型同步、直播推流"
+  en:
+    name: Mesh Avatar Studio
+    description: "3D anime avatar studio: mesh editing, lip sync, live streaming"

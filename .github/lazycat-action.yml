@@ -1,0 +1,33 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/mesh-avatar-studio.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: git
+    image: ""
+
+build:
+  run_buildscript: true
+  toolchains:
+    - kind: node
+      version: 22.x
+
+images: []
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to MiaoMiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Mesh Avatar Studio
+    summary: 3D 二次元头像工作室：网格编辑、口型同步、直播推流
