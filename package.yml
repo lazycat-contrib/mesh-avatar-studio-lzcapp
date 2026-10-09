@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.mesh-avatar
-version: 1.0.0
+version: 1.0.1
 name: Mesh Avatar Studio
 description: "3D 二次元头像工作室：网格编辑、口型同步、Live2D 式直播推流"
 min_os_version: "1.5.0"
